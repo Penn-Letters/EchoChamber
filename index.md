@@ -1,7 +1,7 @@
 ---
-layout: home
-title: EchoChamber Blog
+layout: Home
+title: EchoChamber Posts
 ---
 
-Welcome to EchoChamber Blog!  
-Here you’ll find updates and posts.
+This is a Blog of sorts.  
+Here you’ll find some random posts. Almost all of these ideas are my own. I'll try to give credit when ideas appear that aren't.
