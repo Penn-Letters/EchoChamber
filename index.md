@@ -1,6 +1,6 @@
 ---
-layout: Home
-title: EchoChamber Posts
+layout: home
+title: EchoChamber Blog
 ---
 
 This is a Blog of sorts.  
