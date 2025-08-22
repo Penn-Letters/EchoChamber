@@ -33,7 +33,7 @@
     padding-left: calc(2in); /* ~2 inches from left */
     font-weight: 600;
     letter-spacing: .3px;
-    border-bottom: 1px solid black; /* thin black border */
+    border-bottom: 4px solid black; /* thicker border (4x original) */
   }
 
   /* Centered black window */
@@ -55,7 +55,8 @@
   /* Posts column */
   .posts{
     max-width: var(--maxw);
-    margin: auto; /* keep centered inside black area */
+    margin: auto;
+    padding-top: 0.5in; /* lower posts inside black box */
   }
   .post{
     background: var(--post-bg);
