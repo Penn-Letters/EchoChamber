@@ -7,16 +7,15 @@
 <style>
   :root{
     --header-gray:#2e2e2e;        /* dark gray banner */
-    --forest:#16361a;             /* forest green page */
+    --forest:#0f2412;             /* darker, muted forest green */
     --window:#000000;             /* black window */
     --text:#f5f5f5;
     --post-bg:#ffffff;
     --post-text:#111111;
-    --maxw: 900px;                /* window max width */
+    --maxw: 900px;                /* post column max width */
     --pad: 18px;
   }
 
-  /* Reset-ish */
   *{box-sizing:border-box}
   html,body{height:100%}
   body{
@@ -31,10 +30,10 @@
     background: var(--header-gray);
     color: var(--text);
     padding: 18px 20px;
-    /* "about 2 inches from the left" */
-    padding-left: calc(2in);
+    padding-left: calc(2in); /* ~2 inches from left */
     font-weight: 600;
     letter-spacing: .3px;
+    border-bottom: 1px solid black; /* thin black border */
   }
 
   /* Centered black window */
@@ -44,33 +43,34 @@
   }
   .window{
     background: var(--window);
-    width: min(95vw, var(--maxw));
-    height: calc(100vh - 70px); /* fills screen minus banner */
+    width: min(95vw, calc(var(--maxw) + 2in)); /* posts + 1in each side */
+    height: calc(100vh - 70px);
     margin: 22px 0;
     border-radius: 10px;
-    overflow-y: auto;            /* scrolls UP/DOWN inside window */
+    overflow-y: auto;
+    padding: 0 1in; /* black extends beyond posts */
     box-shadow: 0 10px 40px rgba(0,0,0,.6), inset 0 0 0 1px rgba(255,255,255,.06);
   }
 
-  /* Posts column (one tall “tower”) */
+  /* Posts column */
   .posts{
-    display:block;
+    max-width: var(--maxw);
+    margin: auto; /* keep centered inside black area */
   }
   .post{
     background: var(--post-bg);
     color: var(--post-text);
     padding: calc(var(--pad) + 2px) var(--pad);
-    /* zero gaps so they visually connect */
     margin: 0;
     border-top: 1px solid #e6e6e6;
     line-height: 1.55;
   }
   .post:first-child{
     border-top: none;
-    border-radius: 10px 10px 0 0; /* top corners of tower */
+    border-radius: 10px 10px 0 0;
   }
   .post:last-child{
-    border-radius: 0 0 10px 10px; /* bottom corners of tower */
+    border-radius: 0 0 10px 10px;
   }
   .title{
     font-size: 1.25rem;
@@ -85,7 +85,7 @@
   .post p{margin: 0 0 12px 0}
   .post p:last-child{margin-bottom:0}
 
-  /* Nice thin scrollbar inside the window */
+  /* Custom scrollbar */
   .window::-webkit-scrollbar{width:10px}
   .window::-webkit-scrollbar-track{background:#0d0d0d;border-radius:10px}
   .window::-webkit-scrollbar-thumb{background:#2a2a2a;border-radius:10px}
@@ -99,14 +99,12 @@
     <main class="window" role="main" aria-label="Posts window">
       <section class="posts">
 
-        <!-- ===== POST (copy this block for new posts; put newest at the top) ===== -->
+        <!-- Sample posts -->
         <article class="post">
           <h2 class="title">Sample Post — Replace Me</h2>
           <div class="meta">2025-08-21</div>
           <p>This is a sample post. Paste your writing here. The box expands automatically to fit the text. No click-to-expand needed.</p>
-          <p>Second paragraph just to prove the container grows with content. Keep adding as much as you want.</p>
         </article>
-        <!-- ===== /POST ===== -->
 
         <article class="post">
           <h2 class="title">Another Post</h2>
